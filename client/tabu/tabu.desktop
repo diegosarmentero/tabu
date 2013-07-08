@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=tabu
+Comment=My project description
+Exec=/usr/bin/qmlscene $@ /usr/share/tabu/tabu.qml
+Icon=qmlscene
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
