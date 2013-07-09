@@ -1,0 +1,144 @@
+/* Main Style */
+.switcher h3 {
+	font-size:11px;
+	margin: 1px 0 7px 0;
+	color:#474646;
+	border-bottom: none;
+	line-height: normal
+}
+
+.switcher {
+	background: #fff;
+	width:159px;
+	position:fixed;
+	top:100px;
+	z-index:9999;
+	left:0px;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #ccc;
+	/*-webkit-box-shadow:  0px 0px 4px 0px rgba(51, 51, 51, 0.4);
+	box-shadow:  0px 0px 4px 0px rgba(51, 51, 51, 0.4);*/
+}
+
+.switcher h2 {
+	color: #FFFFFF;
+	padding: 0;
+	font-size: 15px;
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.switcher h2 a {
+	background: url("../../images/icons/switcher.png") no-repeat scroll left center transparent;
+	display: block;
+	height: 50px;
+	position: absolute;
+	right: -52px;
+	text-indent: -9999px;
+	top: 10px;
+	width: 50px;
+}
+
+.switcher .content {
+	padding:5px 16px 16px 16px;
+	overflow:hidden;
+}
+
+/* Layout Box */
+.layout-switcher {
+	margin:0 0 10px 0;
+	overflow:hidden;
+}
+
+.layout-switcher a.layout {
+	padding: 6px 7px 8px 7px;
+	border-radius: 2px;
+	color: #797878;
+	border: 2px solid #EAEAEA;
+	width: 39px;
+	cursor: pointer;
+	float: left;
+	display: block;
+	margin: 0 6px 0 0;
+	text-align: center;
+	background: white;
+}
+
+/*.layout-switcher a.layout.selected3 {
+	color: #474646;
+	cursor: default;
+	border: 2px solid #474646;
+}
+
+*/
+
+/* Color Box */
+.switcher-box {
+	height:auto;
+	overflow:hidden;
+	margin-bottom:6px;
+}
+
+.styleswitch {
+	width: 21px;
+    height: 24px;
+	display: block;
+	cursor: pointer;
+	margin: 0 4px 4px 0;
+	float:left;
+}
+
+/*.styleswitch.selected { box-shadow: 0 0 0 2px #474646 inset; }*/
+
+.styleswitch#blue   { background-color:#00aec8; }
+.styleswitch#orange { background-color:#ee7e2a; }
+.styleswitch#purple { background-color:#81519c; }
+.styleswitch#red    { background-color:#e64141; }
+.styleswitch#green  { background-color:#53b808; }
+
+
+/* Background Box */
+.bg {
+	height:auto;
+	overflow:hidden;
+	margin-bottom:6px;
+}
+
+.pattern {
+	width: 21px;
+    height: 24px;
+	display: block;
+	cursor: pointer;
+	margin: 0 4px 4px 0;
+	float:left;
+	box-shadow: 0 0 0 1px #D6D2D2 inset;
+}
+
+/*.pattern.selected2 { box-shadow: 0 0 0 2px #474646 inset; }*/
+
+.pattern#crossed { background: url("../../images/icons/pattern/crossed.png") no-repeat  ; }
+.pattern#fabric  { background: url("../../images/icons/pattern/fabric.png") no-repeat  ; }
+.pattern#linen   { background: url("../../images/icons/pattern/linen.png") no-repeat  ; }
+.pattern#wood    { background: url("../../images/icons/pattern/wood.png") no-repeat  ; }
+.pattern#diagmonds    { background: url("../../images/icons/pattern/diagmonds.png") no-repeat  ; }
+.pattern#triangles    { background: url("../../images/icons/pattern/triangles.png") no-repeat  ; }
+.pattern#black_mamba    { background: url("../../images/icons/pattern/black_mamba.png") no-repeat  ; }
+.pattern#vichy    { background: url("../../images/icons/pattern/vichy.png") no-repeat  ; }
+.pattern#back_pattern    { background: url("../../images/icons/pattern/back_pattern.png") no-repeat  ; }
+.pattern#checkered_pattern    { background: url("../../images/icons/pattern/checkered_pattern.png") no-repeat  ; }
+.pattern#diamond_upholstery    { background: url("../../images/icons/pattern/diamond_upholstery.png") no-repeat  ; }
+.pattern#lyonnette    { background: url("../../images/icons/pattern/lyonnette.png") no-repeat  ; }
+.pattern#graphy    { background: url("../../images/icons/pattern/graphy.png") no-repeat  ; }
+.pattern#black_thread    { background: url("../../images/icons/pattern/black_thread.png") no-repeat  ; }
+.pattern#subtlenet2    { background: url("../../images/icons/pattern/subtlenet2.jpg") no-repeat  ; }
+
+/* Dark Style */
+a.dark-style {
+	display:block;
+	padding:9px 0 11px 0;
+	text-align:center;
+	background:#292929;
+	color:#fff;
+}
+

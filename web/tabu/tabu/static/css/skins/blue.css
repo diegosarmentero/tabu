@@ -1,0 +1,129 @@
+
+
+/*######################################################################
+
+                      // Theme Color //
+
+########################################################################*/
+
+
+/* Logo 
+===========================================================*/
+#wrap.boxed {
+	border-top: 5px solid #00AEC8;
+}
+
+.logo a:hover, .logoFirst, .h2firstword {
+	color: #00AEC8;
+}
+
+/* search
+==========================================================*/
+.search-btn, .menu-features li a {
+	color: #00AEC8;
+}
+
+/* Menu 
+===========================================================*/
+#jMenu li a {
+	color: #00AEC8;
+}
+#jMenu li a:hover, #jMenu li a.active {
+	border-bottom: 3px solid #00AEC8;
+}
+
+/* Buttons 
+===========================================================*/
+.color-bg, .btnSubscribe:hover, .tags li a:hover, .flex-control-paging li a.flex-active {
+	background: #00AEC8;
+	background-color: #00AEC8;
+}
+#toTopHover {
+	background: #00AEC8 url(../../images/icons/totop.png) center center no-repeat;
+}
+
+/* Portfolio 
+===========================================================*/
+.mask, .mask2, ul#portfolio-filter a:hover, ul#portfolio-filter a.current {
+	background: #00AEC8;
+	background-color: #00AEC8;
+}
+
+/* Blocks
+============================================================*/
+.block:hover {
+	background: #00AEC8;
+}
+
+/* Elements 
+===========================================================*/
+.nav-list > .active > a, .nav-list > .active > a:hover, .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a, .nav-pills > .active > a, .nav-pills > .active > a:hover, .dropcapBg, .depts2 {
+	background: #00AEC8;
+	background-color: #00AEC8;
+}
+.dropcap, .tab-content h5 a, .tab-content h4 a, .tab-content h3 a {
+	color: #00AEC8;
+}
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+	border-top: 2px solid #00AEC8;
+}
+.tabs-below > .nav-tabs > .active > a, .tabs-below > .nav-tabs > .active > a:hover, .view  {
+	border-bottom: 2px solid #00AEC8;
+}
+.tabs-left > .nav-tabs > .active > a {
+	border-left: 2px solid #00AEC8;
+}
+.tabs-right > .nav-tabs > .active > a {
+	border-right: 2px solid #00AEC8;
+}
+
+
+/* Pricing tables 
+===========================================================*/
+.selected-table .table-header h1, .table-wrap-2 .table-column:hover .table-header h1, .selected-table .table-footer a, .table-wrap-2 .table-column:hover .table-footer a, .selected-table .table-header h1, .table-wrap-2 .table-column:hover .table-header h1, .selected-table .table-footer a, .table-wrap-2 .table-column:hover .table-footer a {
+	background: #00AEC8;
+	background-color: #00AEC8;
+}
+.selected-table .plan, .table-wrap-2 .table-column:hover .plan, .selected-table i, .table-wrap-2 .table-column:hover i {
+	color: #00AEC8;
+}
+
+/* Text 
+===========================================================*/
+.date, .color-text, .block i, .underConst h1, .blogOptions span:hover i {
+	color: #00AEC8;
+}
+
+/* Links 
+===========================================================*/
+a:hover, #mainFooter a:hover {
+	color: #00AEC8;
+}
+
+/* Others 
+===========================================================*/
+.member:hover, .catchText {
+	border-bottom: 4px solid #00AEC8;
+}
+.thumbs li a img:hover {
+	border: 3px solid #00AEC8;
+}
+
+/* selection bg color 
+===========================================================*/
+::-moz-selection {
+	background:#00AEC8;
+}
+
+::selection {
+    background:#00AEC8;
+}
+
+
+
+
+
+
+
+
+

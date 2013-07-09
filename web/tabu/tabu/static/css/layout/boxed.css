@@ -1,0 +1,61 @@
+
+/* backgroud images for body */
+body.crossed { background:url(../../images/icons/pattern/crossed_stripes.jpg) repeat; }
+body.fabric { background:url(../../images/icons/pattern/classy_fabric.jpg) repeat; }
+body.linen { background:url(../../images/icons/pattern/low_contrast_linen.jpg) repeat; }
+body.wood { background:url(../../images/icons/pattern/retina_wood.jpg) repeat; }
+body.diagmonds { background:url(../../images/icons/pattern/diagmonds.jpg) repeat; }
+body.triangles { background:url(../../images/icons/pattern/triangles.jpg) repeat; }
+body.black_mamba { background:url(../../images/icons/pattern/black_mamba.jpg) repeat; }
+body.vichy { background:url(../../images/icons/pattern/vichy.jpg) repeat; }
+body.back_pattern { background:url(../../images/icons/pattern/back_pattern.jpg) repeat; }
+body.checkered_pattern { background:url(../../images/icons/pattern/checkered_pattern.jpg) repeat; }
+body.diamond_upholstery { background:url(../../images/icons/pattern/diamond_upholstery.jpg) repeat; }
+body.lyonnette { background:url(../../images/icons/pattern/lyonnette.jpg) repeat; }
+body.graphy { background:url(../../images/icons/pattern/graphy.jpg) repeat; }
+body.black_thread { background:url(../../images/icons/pattern/black_thread.jpg) repeat; }
+body.subtlenet2 { background:url(../../images/icons/pattern/subtlenet2.jpg) repeat; }
+
+/* wrap */
+@media only screen and (min-width: 1200px) { 
+#wrap.boxed {
+	width: 1210px !important;
+}
+}
+body {
+	padding: 30px 0
+}
+
+.hidden {
+	display:block;
+	visibility: visible;
+}
+
+
+
+/* Media Queries
+================================================== */
+
+/* Smaller than standard 1024 (devices and browsers) */
+
+	
+#wrap.boxed {
+	width:980px;
+	margin:0 auto;
+	background:#fff;
+	-webkit-box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+	box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+}
+	
+@media (max-width: 979px) and (min-width: 768px) {
+	#wrap.boxed {
+	width:764px !important;
+}
+}
+
+@media (max-width: 767px) {
+	#wrap.boxed {
+	width:85% !important;
+}	
+}
+
