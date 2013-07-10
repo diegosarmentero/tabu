@@ -1,0 +1,370 @@
+{% load staticfiles %}
+{% load url from future %}
+
+<!DOCTYPE html>
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>Tabu Game!</title>
+    <meta name="description" content="Tabu Party Game">
+    <meta name="author" content="Emilio Ramirez, Diego Sarmentero">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Start CSS Style
+    =======================================================================================-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" /><!-- Main Style -->
+    <!-- Color Skins -->
+    <link rel="stylesheet" href="{% static 'css/skins/blue.css' %}" name="skins">
+    <!-- Layout Style -->
+    <link rel="stylesheet" href="{% static 'css/layout/wide.css' %}" name="layout">
+    <!-- Style Switcher Box -->
+    <link rel="stylesheet" href="{% static 'css/layout/switcher.css' %}">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+</head>
+
+<body onload="prettyPrint()">
+
+    <div id="wrap" class="boxed">
+
+    <div class="container">
+
+    <!-- Header
+    =========================================================================================================== -->
+    <header>
+
+        <!-- Logo + menu -->
+        <div class="logoWrapper">
+                <div class="row">
+                	<!-- logo - font -->
+                    <div class="span6 logo">
+                        <span class="logoFirst">T</span><a href="{% url 'home' %}">abu Party Game!</a>
+                        <span class="small">Have fun guessing words!</span>
+                    </div>
+
+                    <!-- SOCIALS -->
+                    <div class="span6">
+                        <ul class="tooltip-title top-social">
+                            <li><a href="https://twitter.com/emilioramirez" rel="tooltip" title="emilioramirez" class="social2-top"></a></li>
+                            <li><a href="https://twitter.com/diegosarmentero" rel="tooltip" title="diegosarmentero" class="social2-top"></a></li>
+                        </ul>
+                    </div>
+                    <!--/SOCIALS-->
+                </div><!--/row-->
+
+            <!-- STRAT MENU
+            ============================================================ -->
+            <nav class="container menu">
+                	<div class="row">
+                        <div class="span9">
+                            <ul id="jMenu">
+                              <li><a href="#" class="fNiv active">Home<br/>
+                                <span class="smallText">All starts here</span></a>
+                                <ul>
+                                  <li><a href="{% url 'home' %}">Home</a></li>
+                                  <li><a href="index_2.html">Login</a></li>
+                                  <li><a href="index_3.html">Create Card</a></li>
+                              </ul>
+                            </li>
+                              <li><a href="contacts.html" class="fNiv last">Contact<br/>
+                                <span class="smallText">Send message to us</span></a></li>
+                            </li>
+                              <li><a href="#" class="fNiv">Current User:<br/>
+                                <span class="smallText">(Login)</span></a>
+                            </li>
+                          </ul>
+                      </div>
+
+                   </div><!--/row-->
+            </nav>
+            <!--/MENU-->
+
+        </div><!--/logoWrapper-->
+
+    </header>
+
+    <!-- Content
+    ============================================================================================================== -->
+
+    <!--
+    ###################################################################################################
+        - THEMEPUNCH BANNER -
+    ###################################################################################################
+    -->
+
+    <div class="fullwidthbanner-container">
+        <div class="fullwidthabnner">
+        <ul>
+             <!-- FIRST SLIDE -->
+            <li data-transition="flyin" data-slotamount="4" data-masterspeed="300">
+
+                <img alt="" src="{% static 'images/img/bg-blue.png' %}">
+
+                <div class="caption sfb"
+                     data-x="500"
+                     data-y="0"
+                     data-speed="1600"
+                     data-start="2400"
+                     data-easing="easeOutElastic" >
+                     <img alt="" src="{% static 'images/img/man2.png' %}"  />
+                </div>
+
+                <div class="caption sfr"
+                     data-x="120"
+                     data-y="140"
+                     data-speed="1400"
+                     data-start="1800"
+                     data-easing="easeOutElastic">
+                     <div class="text-animate-10">TABU</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="120"
+                     data-y="250"
+                     data-speed="1500"
+                     data-start="2000"
+                     data-easing="easeOutElastic" >
+                     <div class="text-animate-11">Party Game!</div>
+                </div>
+
+            </li>
+
+            <!-- SECOND SLIDE -->
+            <li data-transition="papercut" data-slotamount="6" data-masterspeed="300">
+                <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
+
+                <!-- THE CAPTIONS IN THIS SLDIE -->
+                <div class="caption lft"
+                     data-x="593"
+                     data-y="10"
+                     data-speed="1000"
+                     data-start="400"
+                     data-easing="easeInOutElastic"
+                     data-endeasing="easeOutElastic">
+                     <img alt=""  src="{% static 'images/img/laptop.png' %}"  />
+                </div>
+
+                <div class="caption sfl"
+                     data-x="450"
+                     data-y="85"
+                     data-speed="1000"
+                     data-start="1200"
+                     data-easing="easeOutSine" >
+                    <img alt=""  src="{% static 'images/img/pad.png' %}"  />
+                </div>
+
+                <div class="caption sfr"
+                     data-x="1240"
+                     data-y="120"
+                     data-speed="1000"
+                     data-start="1200"
+                     data-easing="easeOutSine"  >
+                     <img alt=""  src="{% static 'images/img/phone.png' %}"  />
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="20"
+                     data-speed="1400"
+                     data-start="1800"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><b class="icon-ok color-text"> Almibar</b></div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="60"
+                     data-speed="1400"
+                     data-start="2000"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Azucar</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="100"
+                     data-speed="1400"
+                     data-start="2200"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Dulce</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="140"
+                     data-speed="1400"
+                     data-start="2400"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Fruta</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="180"
+                     data-speed="1400"
+                     data-start="2600"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Lata</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="220"
+                     data-speed="1400"
+                     data-start="2800"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Liquido</div>
+                </div>
+
+            </li>
+
+        </ul>
+
+        <div class="tp-bannertimer"></div>
+        </div>
+    </div>
+    <!-- End REVOLUTION SLIDER -->
+
+    <!-- Catch text -->
+    <div class="row">
+        <div class="span12">
+        	<div class="catchText">
+                <div class="row">
+                	<div class="span9">
+                    <p>
+                  Incredible fun Party Game! Compete with your friends to find out the secret "word" without saying it and help your team to win!
+                    </p>
+                    </div>
+                    <div class="span3"><button class="btn-large btn color-bg">PLAY NOW</button></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /Catch text -->
+
+
+    <!-- Services Blocks -->
+    <section class="outerDiv">
+        <div class="row">
+
+            <!-- Part
+                ================-->
+            <div class="span3 centered tooltip-title">
+            </div><!--/-->
+
+            <!-- Part
+                ================-->
+            <div class="span3 centered tooltip-title">
+                <div class="block">
+                    <div class="icon-block"><i class="icon-qrcode"></i></div>
+                    <h3 class="color-text">LOGIN</h3>
+                    <p>
+                        Login with your Twitter, Google or Tabu Account to start creating Cards for different languages, and help us improve
+                        this game for everyone in the world!<br><br>
+                        <a href="#" rel="tooltip" data-placement="top" title="Go to the Login/Signup page">[LOGIN / SIGN UP]</a>
+                    </p>
+                </div>
+            </div><!--/-->
+
+            <!-- Part
+                ================-->
+            <div class="span3 centered tooltip-title">
+            <div class="block">
+                <div class="icon-block"><i class="icon-beaker"></i></div>
+                <h3 class="color-text">CREATE CARDS</h3>
+                <p>
+                    Do you want to add new cards and let other people to have fun guessing your words?<br>
+                    Do you want to extend Tabu for another language?<br>
+                    So start creating new cards!!<br>
+                    <a href="#" rel="tooltip" data-placement="top" title="Go to the Create Card page">[Create Card]</a>
+                </p>
+            </div>
+            </div><!--/-->
+
+            <!-- Part
+                ================-->
+            <div class="span3 centered tooltip-title">
+            </div><!--/-->
+
+        </div>
+        <!--/Block1-->
+
+    </section><!--/Services Blocks-->
+
+    </section><!--/Lates Projects-->
+    </div><!--/row-->
+
+    </div> <!--/container-->
+<!-- Footer
+    ============================================================================================================= -->
+    <div class="container darkBg">
+        <footer>
+                <div id="mainFooter">
+                        <div class="row">
+                            <!-- About Us -->
+                            <div class="span2">
+                                <h4>About Us</h4>
+                                <p>
+                                    Website created by: Emilio Ramirez and Diego Sarmentero
+                                </p>
+                            </div>
+                            <div class="span4">
+                            </div>
+                            <div class="span4">
+                            </div>
+                            <!-- Source Code -->
+                            <div class="span2">
+                                <h4>Source Code</h4>
+                                <address>
+                                  <strong>Github Repo</strong><br/>
+                                  <a href="https://github.com/diegosarmentero/tabu">https://github.com/diegosarmentero/tabu</a>
+                                </address>
+                            </div>
+                        </div>
+
+                        <!-- Copy rights + subscribtion area -->
+                        <div class="row bord-top">
+                            <div class="span6 copyrights">
+                          Copyright 2013  Tabu</a>
+                            </div>
+
+                            <div class="span6">
+                                <ul class="footer-social tooltip-title">
+                                <li><a href="https://twitter.com/emilioramirez" rel="tooltip" title="emilioramirez"><i class="icon-twitter-sign"></i></a></li>
+                                <li><a href="https://twitter.com/diegosarmentero" rel="tooltip" title="diegosarmentero"><i class="icon-twitter-sign"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                </div><!--/mainFooter-->
+            </footer>
+        </div><!--/container-->
+    	
+        </div><!--/wrap-->
+    	
+        <!-- Start Style Switcher -->
+        <div class="switcher"></div>
+        <!-- End Style Switcher -->
+
+	<!-- javascript
+    ============================================================================================================= -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/jquery.js' %}"></script><!-- Main JQuery -->
+    <script src="{% static 'js/bootstrap.js' %}"></script><!-- Bootstrap Js main file -->
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script><!-- easing.1.3 -->
+    <script src="{% static 'js/jquery.cookie.js' %}"></script><!-- cookie -->
+    <script src="{% static 'js/jquery-ui-1.8.20.custom.min.js' %}"></script><!-- jquery-ui -->
+    <script src="{% static 'js/jMenu.jquery.js' %}"></script><!-- Nav menu -->
+    <script defer src="{% static 'js/jquery.flexslider.js' %}"></script><!-- Flex Basic carousel -->
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script><!-- PrettyPhoto -->
+    <script src="{% static 'js/jquery.liquid-slider-0.1.js' %}"></script><!-- Testimonials - text slider -->
+    <script src="{% static 'js/jquery.tweet.js' %}"></script><!-- Twitter plugin -->
+    <script src="{% static 'js/jflickrfeed.min.js' %}"></script><!-- jQuery Flickr -->
+    <script src="{% static 'js/jquery.ui.totop.js' %}" ></script><!-- Go to top -->
+    <script src="{% static 'js/filterable.pack.js' %}"></script><!-- Filter portfolio -->
+    <script src="{% static 'js/audio.min.js' %}"></script><!-- audio player -->
+    <script src="{% static 'js/prettify.js' %}"></script><!-- YOU CAN REMOVE IT // it's associated with shortcodes preview boxes -->
+    <script defer src="{% static 'rs-plugin/js/jquery.themepunch.plugins.min.js' %}"></script><!--REVOLUTION SLIDER-->
+    <script defer src="{% static 'rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script><!--REVOLUTION SLIDER-->
+    <script src="{% static 'js/custom.js' %}"></script><!-- All scripts that shuold be on html file collected here -->
+
+</body>
+</html>
