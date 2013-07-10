@@ -9,6 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
      url(r'^$', views.home, name='home'),
+     url(r'^game/$', views.game_example, name='game_example'),
     # url(r'^tabu/', include('tabu.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
