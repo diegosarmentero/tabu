@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'allauth.socialaccount.providers.persona',
     'allauth.socialaccount.providers.twitter',
     # -----------------------------------------
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

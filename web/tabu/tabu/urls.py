@@ -9,13 +9,18 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
      url(r'^$', views.home, name='home'),
+	# Game
      url(r'^setup/$', views.setup_page, name='setup_page'),
      url(r'^game/$', views.game, name='game'),
+    # Login
+    (r'^accounts/', include('allauth.urls')),
+    # Sections:
+    url(r'^$', views.home, name='home'),
     # url(r'^tabu/', include('tabu.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
 )
