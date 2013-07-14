@@ -7,6 +7,11 @@ def home(request):
     return render_response(request, 'index.html')
 
 
-def game_example(request):
-    """Game Example Page."""
-    return render_response(request, 'game_example.html')
+def setup_page(request):
+    """Setup page."""
+    return render_response(request, 'tabu/setup_page.html')
+
+
+def game(request):
+    """Game Page."""
+    return render_response(request, 'tabu/game_page.html')
