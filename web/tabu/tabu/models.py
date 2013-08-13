@@ -27,6 +27,7 @@ class Card(models.Model):
 def add_language(lang, user):
     result = {}
     try:
+        lang = lang.title()
         langobj, created = Language.objects.get_or_create(lang=lang, user=user)
         if created:
             langobj.save()
@@ -51,19 +52,20 @@ def get_cards(lang):
 def add_card(lang, mainword, word1, word2, word3, word4, word5, user):
     result = {}
     try:
+        lang = lang.title()
+        mainword = mainword.title()
+        word1 = word1.title()
+        word2 = word2.title()
+        word3 = word3.title()
+        word4 = word4.title()
+        word5 = word5.title()
         cardobj, created = Card.objects.get_or_create(lang=lang, user=user,
             mainword=mainword, word1=word1, word2=word2, word3=word3,
             word4=word4, word5=word5)
         if created:
-            print '\n\n'
-            print created
-            print '\n\n'
             cardobj.save()
             result["card"] = mainword
         else:
-            print '\n\n'
-            print "exists"
-            print '\n\n'
             result["error"] = "Card %s already exists" % mainword
     except:
         result["error"] = "Card couldn't be added."
