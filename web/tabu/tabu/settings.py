@@ -183,5 +183,7 @@ LOGGING = {
 ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
 
-if DEBUG:
+try:
     from local_settings import *
+except ImportError:
+    pass

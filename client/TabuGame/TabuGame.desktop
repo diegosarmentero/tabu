@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=tabu
+Name=TabuGame
 Comment=My project description
-Exec=/usr/bin/qmlscene $@ /usr/share/tabu/tabu.qml
+Exec=/usr/bin/qmlscene $@ /usr/share/TabuGame/TabuGame.qml
 Icon=qmlscene
 Terminal=false
 Type=Application
