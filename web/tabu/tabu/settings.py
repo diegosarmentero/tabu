@@ -145,7 +145,7 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-LOGIN_URL = '/login'
+#LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/'
 #LOGIN_ERROR_URL = '/login-asdddddd'
 
@@ -178,7 +178,7 @@ LOGGING = {
     }
 }
 
-SITE_ID = 2
+#SITE_ID = 2
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_EMAIL_VERIFICATION = "none"

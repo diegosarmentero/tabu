@@ -4,6 +4,148 @@
 
 {% block content %}
 
+    <!-- Content
+    ============================================================================================================== -->
+
+    <!--
+    ###################################################################################################
+        - THEMEPUNCH BANNER -
+    ###################################################################################################
+    -->
+
+    <div class="fullwidthbanner-container">
+        <div class="fullwidthabnner">
+        <ul>
+             <!-- FIRST SLIDE -->
+            <li data-transition="flyin" data-slotamount="4" data-masterspeed="300">
+
+                <img alt="" src="{% static 'images/img/bg-blue.png' %}">
+
+                <div class="caption sfb"
+                     data-x="500"
+                     data-y="0"
+                     data-speed="1600"
+                     data-start="2400"
+                     data-easing="easeOutElastic" >
+                     <img alt="" src="{% static 'images/img/man2.png' %}"  />
+                </div>
+
+                <div class="caption sfr"
+                     data-x="120"
+                     data-y="140"
+                     data-speed="1400"
+                     data-start="1800"
+                     data-easing="easeOutElastic">
+                     <div class="text-animate-10">TABU</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="120"
+                     data-y="250"
+                     data-speed="1500"
+                     data-start="2000"
+                     data-easing="easeOutElastic" >
+                     <div class="text-animate-11">Party Game!</div>
+                </div>
+
+            </li>
+
+            <!-- SECOND SLIDE -->
+            <li data-transition="papercut" data-slotamount="6" data-masterspeed="300">
+                <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
+
+                <!-- THE CAPTIONS IN THIS SLDIE -->
+                <div class="caption lft"
+                     data-x="593"
+                     data-y="10"
+                     data-speed="1000"
+                     data-start="400"
+                     data-easing="easeInOutElastic"
+                     data-endeasing="easeOutElastic">
+                     <img alt=""  src="{% static 'images/img/laptop.png' %}"  />
+                </div>
+
+                <div class="caption sfl"
+                     data-x="450"
+                     data-y="85"
+                     data-speed="1000"
+                     data-start="1200"
+                     data-easing="easeOutSine" >
+                    <img alt=""  src="{% static 'images/img/pad.png' %}"  />
+                </div>
+
+                <div class="caption sfr"
+                     data-x="1240"
+                     data-y="120"
+                     data-speed="1000"
+                     data-start="1200"
+                     data-easing="easeOutSine"  >
+                     <img alt=""  src="{% static 'images/img/phone.png' %}"  />
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="20"
+                     data-speed="1400"
+                     data-start="1800"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><b class="icon-ok color-text"> Tabu</b></div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="60"
+                     data-speed="1400"
+                     data-start="2000"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Game</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="100"
+                     data-speed="1400"
+                     data-start="2200"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Fun</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="140"
+                     data-speed="1400"
+                     data-start="2400"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Friends</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="180"
+                     data-speed="1400"
+                     data-start="2600"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Party</div>
+                </div>
+
+                <div class="caption sfr"
+                     data-x="80"
+                     data-y="220"
+                     data-speed="1400"
+                     data-start="2800"
+                     data-easing="easeOutElastic" >
+                    <div class="text-animate-5"><i class="icon-ok color-text"></i> Words</div>
+                </div>
+
+            </li>
+
+        </ul>
+
+        <div class="tp-bannertimer"></div>
+        </div>
+    </div>
+    <!-- End REVOLUTION SLIDER -->
+
 <!-- Catch text -->
     <div class="row">
         <div class="span12">
@@ -14,7 +156,7 @@
                   Incredible fun Party Game! Compete with your friends to find out the secret "word" without saying it and help your team to win!
                     </p>
                     </div>
-                    <div class="span3"><button class="btn-large btn color-bg">PLAY NOW</button></div>
+                    <div class="span3"><a href="{% url 'setup_page' %}"><button class="btn-large btn color-bg">PLAY NOW</button></a></div>
                 </div>
             </div>
         </div>
@@ -32,6 +174,7 @@
 
             <!-- Part
                 ================-->
+            <a href="{% url 'account_login' %}">
             <div class="span3 centered tooltip-title">
                 <div class="block">
                     <div class="icon-block"><i class="icon-qrcode"></i></div>
@@ -42,10 +185,12 @@
                         <a href="#" rel="tooltip" data-placement="top" title="Go to the Login/Signup page">[LOGIN / SIGN UP]</a>
                     </p>
                 </div>
-            </div><!--/-->
+            </div>
+            </a><!--/-->
 
             <!-- Part
                 ================-->
+            <a href="{% url 'cards' %}">
             <div class="span3 centered tooltip-title">
             <div class="block">
                 <div class="icon-block"><i class="icon-beaker"></i></div>
@@ -57,7 +202,8 @@
                     <a href="#" rel="tooltip" data-placement="top" title="Go to the Create Card page">[Create Card]</a>
                 </p>
             </div>
-            </div><!--/-->
+            </div>
+            </a><!--/-->
 
             <!-- Part
                 ================-->

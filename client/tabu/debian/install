@@ -1,0 +1,10 @@
+StartPage.qml /usr/share/tabu
+tabu.qmlproject /usr/share/tabu
+BasePage.qml /usr/share/tabu
+data.js /usr/share/tabu
+tabu.qml /usr/share/tabu
+notepaper.jpg /usr/share/tabu
+WinnerPage.qml /usr/share/tabu
+PlayPage.qml /usr/share/tabu
+Card.qml /usr/share/tabu
+tabu.desktop /usr/share/applications
