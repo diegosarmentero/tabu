@@ -30,7 +30,7 @@ Page {
     signal endOfGame(string team1, int points1, string team2, int points2)
 
     function callback(data) {
-        rounds = rounds * players;
+        rounds = rounds * players * 2;
         root.model = data;
         if(root.model.length == 0) {
             PopupUtils.open(dialogNoCards);
@@ -38,6 +38,18 @@ Page {
     }
 
     function start_game() {
+        card1.mainWord = "";
+        card1.relatedWord1 = "";
+        card1.relatedWord2 = "";
+        card1.relatedWord3 = "";
+        card1.relatedWord4 = "";
+        card1.relatedWord5 = "";
+        card2.mainWord = "";
+        card2.relatedWord1 = "";
+        card2.relatedWord2 = "";
+        card2.relatedWord3 = "";
+        card2.relatedWord4 = "";
+        card2.relatedWord5 = "";
         root.model = undefined;
         root.seconds = 60;
         root.team1_points = 0;
