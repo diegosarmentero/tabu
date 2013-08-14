@@ -4,7 +4,6 @@ function round_start(){
     btnIncorrect.visible = true;
     btnNext.visible = false;
     timer.start();
-    rounds = rounds * players;
 
     team1_playing = !team1_playing;
     if(team1_playing){
@@ -26,7 +25,6 @@ function round_end(){
     rounds -= 1;
 
     if(rounds == 0){
-        console.log("ENDDDDDDD");
         endOfGame(team1Name, team1_points, team2Name, team2_points);
     }
 }

@@ -7,6 +7,7 @@ import Ubuntu.Components.Popups 0.1
 Page {
     id: root
     title: _title_team1
+    visible: false
 
     property var model
     property int seconds: 60
@@ -15,25 +16,26 @@ Page {
     property string _title_team1: "<font color='#00aec8'>T</font><font color='#2f3934'>abu Team: </font>" + team1Name
     property string _title_team2: "<font color='#00aec8'>T</font><font color='#2f3934'>abu Team: </font>" + team2Name
 
-    property string team1Name: "diego"
-    property string team2Name: "otro"
+    property string team1Name: ""
+    property string team2Name: ""
     property int team1_points: 0
     property int team2_points: 0
-    property int players: 2
-    property int rounds: 1
-    property string language: "Spanish"
+    property int players: 0
+    property int rounds: 0
+    property string language: ""
 
     signal back
     signal endOfGame(string team1, int points1, string team2, int points2)
 
     function callback(data) {
+        rounds = rounds * players;
         root.model = data;
 
     }
 
-    Component.onCompleted: {
+    function get_cards() {
         PopupUtils.open(dialog);
-        Server.get_cards(root.language, callback)
+        Server.get_cards(root.language, callback);
     }
 
     Component {

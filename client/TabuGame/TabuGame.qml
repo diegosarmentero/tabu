@@ -24,7 +24,7 @@ MainView {
     PageStack {
         id: stack
 
-        Component.onCompleted: push(play)
+        Component.onCompleted: push(start)
 
         Start {
             id: start
@@ -60,11 +60,24 @@ MainView {
             onBack: stack.push(start);
 
             onEndOfGame: {
-                console.log(team1);
-                console.log(points1);
-                console.log(team2);
-                console.log(points2);
+                if(points1 > points2) {
+                    winner.winner = team1;
+                    winner.winnerPoints = points1;
+                    winner.loser = team2;
+                    winner.loserPoints = points2;
+                } else {
+                    winner.winner = team2;
+                    winner.winnerPoints = points2;
+                    winner.loser = team1;
+                    winner.loserPoints = points1;
+                }
             }
+        }
+
+        Winner {
+            id: winner
+
+            onStart: stack.push(start);
         }
     }
 }
