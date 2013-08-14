@@ -32,7 +32,7 @@ Page {
     function callback(data) {
         rounds = rounds * players * 2;
         root.model = data;
-        if(root.model.length == 0) {
+        if(root.model.length < 10) {
             PopupUtils.open(dialogNoCards);
         }
     }
@@ -67,7 +67,7 @@ Page {
          id: dialogNoCards
          Dialog {
              id: dialogueCards
-             title: i18n.tr("No Cards")
+             title: i18n.tr("No enough Cards")
              text: i18n.tr("No cards were found for %1.\nVisit: http://tabugame.org/cards/ to create some.").arg(root.language)
 
              Button {
