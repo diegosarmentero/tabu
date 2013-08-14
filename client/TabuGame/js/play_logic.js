@@ -14,8 +14,6 @@ function round_start(){
     }
     shuffle_cards();
     change_card();
-
-    rounds -= 1;
 }
 
 function round_end(){
@@ -25,6 +23,7 @@ function round_end(){
     btnIncorrect.visible = false;
     btnNext.visible = true;
     seconds = 60;
+    rounds -= 1;
 
     if(rounds == 0){
         console.log("ENDDDDDDD");
