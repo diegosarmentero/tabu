@@ -33,7 +33,14 @@ Page {
 
     }
 
-    function get_cards() {
+    function start_game() {
+        root.team1_points = 0;
+        root.team2_points = 0;
+        root.team1_playing = false;
+        btnStart.visible = true;
+        btnCorrect.visible = false;
+        btnIncorrect.visible = false;
+        btnNext.visible = false;
         PopupUtils.open(dialog);
         Server.get_cards(root.language, callback);
     }

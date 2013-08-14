@@ -51,7 +51,7 @@ MainView {
                 play.rounds = rounds;
                 play.language = lang;
                 stack.push(play);
-                play.get_cards();
+                play.start_game();
             }
         }
 
@@ -72,6 +72,7 @@ MainView {
                     winner.loser = team1;
                     winner.loserPoints = points1;
                 }
+                model = undefined
                 stack.push(winner);
             }
         }
