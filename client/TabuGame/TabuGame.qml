@@ -72,6 +72,7 @@ MainView {
                     winner.loser = team1;
                     winner.loserPoints = points1;
                 }
+                stack.push(winner);
             }
         }
 
