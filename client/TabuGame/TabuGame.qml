@@ -60,6 +60,10 @@ MainView {
 
             onBack: stack.push(start);
 
+            onExit: stack.push(start);
+
+            onNoCardsFound: stack.push(setup);
+
             onEndOfGame: {
                 if(points1 > points2) {
                     winner.winner = team1;
@@ -72,7 +76,6 @@ MainView {
                     winner.loser = team1;
                     winner.loserPoints = points1;
                 }
-                model = undefined
                 stack.push(winner);
             }
         }

@@ -25,15 +25,21 @@ Page {
     property string language: ""
 
     signal back
+    signal exit
+    signal noCardsFound
     signal endOfGame(string team1, int points1, string team2, int points2)
 
     function callback(data) {
         rounds = rounds * players;
         root.model = data;
-
+        if(root.model.length == 0) {
+            PopupUtils.open(dialogNoCards);
+        }
     }
 
     function start_game() {
+        root.model = undefined;
+        root.seconds = 60;
         root.team1_points = 0;
         root.team2_points = 0;
         root.team1_playing = false;
@@ -43,6 +49,50 @@ Page {
         btnNext.visible = false;
         PopupUtils.open(dialog);
         Server.get_cards(root.language, callback);
+    }
+
+    Component {
+         id: dialogNoCards
+         Dialog {
+             id: dialogueCards
+             title: i18n.tr("No Cards")
+             text: i18n.tr("No cards were found for %1.\nVisit: http://tabugame.org/cards/ to create some.").arg(root.language)
+
+             Button {
+                 text: i18n.tr("Go to Setup")
+                 color: UbuntuColors.orange
+                 onClicked: {
+                     PopupUtils.close(dialogueCards);
+                     root.noCardsFound();
+                 }
+             }
+         }
+    }
+
+    Component {
+         id: dialogExit
+         Dialog {
+             id: dialogueExit
+             title: i18n.tr("Exit")
+             text: i18n.tr("Doy you want to close the game?")
+
+             Button {
+                 text: i18n.tr("Close")
+                 color: "grey"
+                 onClicked: {
+                     PopupUtils.close(dialogueExit);
+                     root.exit();
+                 }
+             }
+             Button {
+                 text: i18n.tr("Resume")
+                 color: UbuntuColors.orange
+                 onClicked: {
+                     PopupUtils.close(dialogueExit);
+                     timer.start();
+                 }
+             }
+         }
     }
 
     Component {
@@ -113,6 +163,14 @@ Page {
             color: "white"
             anchors.centerIn: parent
             font.pixelSize: units.gu(1) * 8
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                timer.stop();
+                PopupUtils.open(dialogExit);
+            }
         }
     }
 
