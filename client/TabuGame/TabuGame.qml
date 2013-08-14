@@ -51,6 +51,7 @@ MainView {
                 play.rounds = rounds;
                 play.language = lang;
                 stack.push(play);
+                play.get_cards();
             }
         }
 
