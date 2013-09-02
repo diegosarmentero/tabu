@@ -1,48 +1,63 @@
+{% extends "base/base.html" %}
 {% load staticfiles %}
 {% load url from future %}
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load socialaccount %}
 
-    <link rel="stylesheet" href="{% static 'css/jquerymobile/jquery.mobile-1.3.1.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/jquerymobile/jquery.mobile.structure-1.3.1.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/jquerymobile/jquery.mobile.theme-1.3.1.css' %}" />
-    
-    <script src="{% static 'js/jquerymobile/jquery-v1.9.1.js' %}"></script>
-    <script src="{% static 'js/jquerymobile/jquery.mobile-1.3.1.js' %}"></script>
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'js/actions.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/pnotify-1.2.0/jquery.pnotify.min.js' %}"></script>
+<link href="{% static 'js/pnotify-1.2.0/jquery.pnotify.default.css' %}" rel="stylesheet" type="text/css" />
+{% endblock scripts %}
 
-</head> 
-<body> 
-    <!-- PAGE Setup -->
-    <div id="setup" data-role="page">
-        <div data-role="header">
-            <h1>Configurar juego</h1>
+{% block content %}
+<div class="main">
+    <div class="container">
+        <div class="row row-login">
+            <div class="span5 sidebar_content">
+                <div class="wrapper-login">
+                    <div class="container">
+                        <div class="row">
+                            <div class="login-content span5 offset1">
+                                <div class="header-login well">
+                                    <h3>Setup Game!</h3>
+                                </div>
+                                <form id="form_setup" class="well" method="POST">
+                                {% csrf_token %}
+                                {% if error %}
+                                    <div id="hiddenError">
+                                {% else %}
+                                    <div id="hiddenError" style="display: none;">
+                                {% endif %}
+                                    <p><font color="red">{{ error }}</font></p>
+                                </div>
+                                <div id="languageCombo" style="display: inline-block;">
+                                    <p><label for="id_language">Language:</label>
+                                        <p id="id_language" name="language">
+                                            <select id="selectCombo" name="selCombo" size=1>
+                                                {% for langname in langs %}
+                                                    <option value="{{ langname }}">{{ langname }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        <p>
+                                    </p>
+                                </div>
+                                <div id="dataTeam" style="display: inline-block;">
+                                <p><label for="id_first_team">First Team Name:</label> <input id="id_first_team" name="first_team" placeholder="First Team Name"/></p>
+                                <p><label for="id_second_team">Second Team Name:</label> <input id="id_second_team" name="second_team" placeholder="Second Team Name"/></p>
+                                <p><label for="id_players">Number of Players per Team:</label> <input id="id_players" name="players" placeholder="Number of Players"/></p>
+                                <p><label for="id_rounds">Number of Rounds:</label> <input id="id_rounds" name="rounds" placeholder="Number of Rounds"/></p>
+                                  <input type="submit" class="btn btn-info" value="Start Game!">
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end content settings -->
+            </div>
         </div>
-        <div data-role="content">
-            <p>Elija los nombres de los equipos</p>
-            <form action="/game">
-                <div data-role="fieldcontain">
-                    <label for="teamA">Nombre del Equipo A:</label>
-                    <input placeholder="Chimi" type="text" data-clear-btn="true" name="teamA" id="teamA" value="">   
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="teamB">Nombre del Equipo B:</label>
-                    <input placeholder="Churri" type="text" data-clear-btn="true" name="teamB" id="teamB" value="">                    
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="time">Tiempo de la ronda (seg):</label>
-                    <input type="text" data-clear-btn="true" name="time" id="time" value="60">
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="rounds">Cantidad de rondas:</label>
-                    <input type="text" data-clear-btn="true" name="rounds" id="rounds" value="10">
-                </div>
-                <input type="submit" data-icon="arrow-r" data-iconpos="right" value="Comenzar" data-theme="e">
-            </form>
-        </div>
-    </div>
-    <!-- /PAGE Setup -->
-</body>
-</html>
+    </div><!-- end container -->
+</div><!-- end main -->
+
+{% endblock %}

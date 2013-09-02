@@ -21,7 +21,7 @@ Base {
 
         Label {
             id: title
-            text: i18n.tr("Taboo is a word guessing party game. The objective of the game is for a player to have his/her partner(s) guess the word on his/her card without using the word itself or five additional words listed on the card.")
+            text: i18n.tr("Tabu is a word guessing party game. The objective of the game is for a player to have his/her partner(s) guess the word on his/her card without using the word itself or five additional words listed on the card.")
             fontSize: "large"
             color: "#2f3934"
             anchors {
@@ -46,17 +46,69 @@ Base {
         }
 
         Label {
-            id: rules_description
-            text: i18n.tr("An even number of players sit alternating around in a circle. Players take turns as the ''giver'', who attempts to prompt his or her teammates to guess as many keywords as possible in the allotted time. However, each card also has ''taboo'' (forbidden) words listed which may not be spoken. Should the giver say one, a ''censor'' on the opposing team hits the Incorrect Button and the giver must move on to the next word. For example, the giver might have to get his or her team to deduce the word ''baseball'' without offering the words ''sport,'' ''game,'' ''pastime'', ''hitter,'' ''pitcher'', or ''baseball'' itself as clues. The giver may not say a part of a ''taboo'' word; for example, using ''base'' in ''baseball'' is taboo. The giver may only use speech to prompt his or her teammates; gestures, sounds (e.g. barking), or drawings are not allowed. Singing is permitted, provided the singer is singing words rather than humming or whistling a tune. The giver's hints may not rhyme with a taboo word, or be an abbreviation of a taboo word.\n\nWhile the giver is prompting the teammates they may make as many guesses as they want with no penalties for wrong guesses. Once the team correctly guesses the word exactly as written on the card, the giver moves on to the next word, trying to get as many words as possible in the allotted time. When time runs out, play passes to the next adjacent player of the other team. The playing team receives one point for correct guesses.")
+            text: i18n.tr("1) Divide the players into two teams.")
             fontSize: "large"
             color: "#2f3934"
             anchors {
                 left: parent.left
                 right: parent.right
             }
-
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        }
 
+        Label {
+            text: i18n.tr("2) Choose one person from a team to be the first clue giver. She/He sits opposite of their team and start the round of Tabu, flipping the cards when necessary. The card should be hidden from their team but visible to at least one of her/his opponents. That opponent should pay attention to press Incorrect when one of the forbidden words is mentioned.")
+            fontSize: "large"
+            color: "#2f3934"
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        }
+
+        Label {
+            text: i18n.tr("3) Give verbal clues to your teammates to help them guess the word placed at the top of the card. Your clues can be sentences or single words. Do not use the words that are shown on the Tabu list on the card. The list on the card contains a number of words or terms that are considered \"tabu/taboo,\" and therefore cannot be said aloud by the clue giver. The listed words, and any parts or forms of them, are forbidden as clues. For instance, you cannot say the words \"baby\" or \"sitter\" if the word \"babysitter\" is listed. You also cannot say \"work\" if one of the words listed is \"work\".")
+            fontSize: "large"
+            color: "#2f3934"
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        }
+
+        Label {
+            text: i18n.tr("4) Score one point for the clue giver's team for each word they guess correctly, pressing \"Correct\". There is no penalty for wrong answers.")
+            fontSize: "large"
+            color: "#2f3934"
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        }
+
+        Label {
+            text: i18n.tr("5) You can flip the card and move on to the next Card if you want.")
+            fontSize: "large"
+            color: "#2f3934"
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        }
+
+        Label {
+            text: i18n.tr("6) Press the \"Incorrect\" button if you hear the clue giver use the Tabu word, or any of the related ones. If this happens, the clue giver must move on to another word. The clue giver may continue giving clues until the time (one minute) expires. The team with the biggest number of words guessed at the end of all the rounds wins.")
+            fontSize: "large"
+            color: "#2f3934"
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         }
 
         Button {

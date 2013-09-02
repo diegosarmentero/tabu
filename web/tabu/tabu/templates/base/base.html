@@ -57,7 +57,7 @@
                 	<div class="row">
                         <div class="span9">
                             <ul id="jMenu">
-                              <li><a href="#" class="fNiv active">Home<br/>
+                              <li><a href="#" class="fNiv">Home<br/>
                                 <span class="smallText">All starts here</span></a>
                                 <ul>
                                   <li><a href="{% url 'home' %}">Home</a></li>
@@ -68,6 +68,9 @@
                                   {% endif %}
                                   <li><a href="{% url 'cards' %}">Create Card</a></li>
                               </ul>
+                            </li>
+                            <li><a href="{% url 'how_to_play' %}" class="fNiv">How to Play?<br/>
+                                <span class="smallText">Learn to play Tabu in 6 steps</span></a>
                             </li>
                               <!--li><a href="{% url 'contact' %}" class="fNiv last">Contact<br/>
                                 <span class="smallText">Send a message to us</span></a></li>

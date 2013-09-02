@@ -1,0 +1,56 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+{% load url from future %}
+{% load socialaccount %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'js/actions.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/pnotify-1.2.0/jquery.pnotify.min.js' %}"></script>
+<link href="{% static 'js/pnotify-1.2.0/jquery.pnotify.default.css' %}" rel="stylesheet" type="text/css" />
+{% endblock scripts %}
+
+{% block content %}
+<div class="main">
+    <div class="container">
+        <div class="row row-login">
+            <div class="span9 sidebar_content">
+                <div class="wrapper-login">
+                    <div class="container">
+                        <div class="row">
+                            <div class="login-content span9 offset1">
+                                <div class="header-login well">
+                                    <h3>How to Play</h3>
+                                </div>
+                                <p>
+                                    Tabu is a word guessing party game. The objective of the game is for a player to have his/her partner(s) guess the word on his/her card without using the word itself or five additional words listed on the card.
+                                </p>
+                                <p>
+                                    1) Divide the players into two teams.
+                                </p>
+                                <p>
+                                    2) Choose one person from a team to be the first clue giver. She/He sits opposite of their team and start the round of Tabu, flipping the cards when necessary. The card should be hidden from their team but visible to at least one of her/his opponents. That opponent should pay attention to press Incorrect when one of the forbidden words is mentioned.
+                                </p>
+                                <p>
+                                    3) Give verbal clues to your teammates to help them guess the word placed at the top of the card. Your clues can be sentences or single words. Do not use the words that are shown on the Tabu list on the card. The list on the card contains a number of words or terms that are considered \"tabu/taboo,\" and therefore cannot be said aloud by the clue giver. The listed words, and any parts or forms of them, are forbidden as clues. For instance, you cannot say the words "baby" or "sitter" if the word "babysitter" is listed. You also cannot say "work" if one of the words listed is "work".
+                                </p>
+                                <p>
+                                    4) Score one point for the clue giver's team for each word they guess correctly, pressing "Correct". There is no penalty for wrong answers.
+                                </p>
+                                <p>
+                                    5) You can flip the card and move on to the next Card if you want.
+                                </p>
+                                <p>
+                                    6) Press the "Incorrect" button if you hear the clue giver use the Tabu word, or any of the related ones. If this happens, the clue giver must move on to another word. The clue giver may continue giving clues until the time (one minute) expires. The team with the biggest number of words guessed at the end of all the rounds wins.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end content settings -->
+            </div>
+        </div>
+    </div><!-- end container -->
+</div><!-- end main -->
+
+{% endblock %}

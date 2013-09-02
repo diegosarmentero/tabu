@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^get_cards/$', views.get_cards, name='get_cards'),
 
     # Game
+     url(r'^how_to_play/$', views.how_to_play, name='how_to_play'),
      url(r'^setup/$', views.setup_page, name='setup_page'),
      url(r'^game/$', views.game, name='game'),
 

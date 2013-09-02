@@ -21,9 +21,40 @@ def cards(request):
     return render_response(request, 'cards.html', data)
 
 
+def how_to_play(request):
+    """Setup page."""
+    return render_response(request, 'how_to_play.html')
+
+
 def setup_page(request):
     """Setup page."""
-    return render_response(request, 'tabu/setup_page.html')
+    cards = list(models.get_cards('Spanish'))
+    data = {"team1": "team1", "team2": "team2", "players": 2,
+        "rounds": 2, "cards": cards}
+    return render_response(request, 'tabu/game_page.html', data)
+    #if request.method == 'POST':
+        #try:
+            #lang = request.POST['selCombo']
+            #team1 = request.POST['first_team']
+            #team2 = request.POST['second_team']
+            #players = int(request.POST['players'])
+            #rounds = int(request.POST['rounds'])
+            #if not team1 or not team2 or players < 2 or rounds < 1:
+                #raise Exception()
+
+            #cards_list = list(models.get_cards(lang))
+            #cards = simplejson.dumps(cards_list)
+            #data = {"team1": team1, "team2": team2, "players": players,
+                #"rounds": rounds, "cards": cards}
+            #return render_response(request, 'tabu/game_page.html', data)
+        #except:
+            #langs = models.get_languages()
+            #data = {"langs": langs, 'error': "Missing or Invalid data."}
+            #return render_response(request, 'tabu/setup_page.html', data)
+    #else:
+        #langs = models.get_languages()
+        #data = {"langs": langs}
+        #return render_response(request, 'tabu/setup_page.html', data)
 
 
 def game(request):
