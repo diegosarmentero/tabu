@@ -53,6 +53,7 @@ function end_round() {
         location.hash = "#ready";
     }
     rounds_played += 1;
+    change_card();
 }
 
 function start_round() {
