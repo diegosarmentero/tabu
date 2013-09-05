@@ -73,6 +73,7 @@ function time_progress(){
 
 function reset_game() {
     rounds_played = 1;
+    $("#round_nro").html(parseInt(rounds_played / players) + " / " + (rounds / players));
     team1_playing = true;
     team1_points = 0;
     team2_points = 0;
