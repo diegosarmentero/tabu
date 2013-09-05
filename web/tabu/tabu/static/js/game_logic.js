@@ -76,5 +76,8 @@ function reset_game() {
     team1_playing = true;
     team1_points = 0;
     team2_points = 0;
+    $("#teamname").html("Team: " + team1);
+    $("#teamnameRound").html("Team: " + team1);
+    $("#current_score").html("Score: " + team1_points);
     location.hash = "#ready";
 }
