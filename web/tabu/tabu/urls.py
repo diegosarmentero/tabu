@@ -20,7 +20,6 @@ urlpatterns = patterns('',
 
     # Game
      url(r'^how_to_play/$', views.how_to_play, name='how_to_play'),
-     url(r'^setup/$', views.setup_page, name='setup_page'),
      url(r'^game/$', views.game, name='game'),
 
     # Uncomment the admin/doc line below to enable admin documentation:

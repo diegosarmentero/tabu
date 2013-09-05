@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="{% static 'css/jquerymobile/jquery.mobile-1.3.1.css' %}" />
     <link rel="stylesheet" href="{% static 'css/jquerymobile/jquery.mobile.structure-1.3.1.css' %}" />
@@ -18,42 +18,31 @@
     <script src="{% static 'js/jquerymobile/jquery.mobile-1.3.1.js' %}"></script>
 
     <script type="text/javascript">
-        var team1 = "{{ team1 }}";
-        var team2 = "{{ team2 }}";
-        var players = {{ players }};
-        var rounds = {{ rounds }};
-        var time = 60;
-        var timerId;
+        team1 = "{{ team1 }}";
+        team2 = "{{ team2 }}";
+        players = {{ players }};
+        rounds = {{ players }} * {{ rounds }};
+        time = 60;
 
         $(document).ready(function() {
             $("#teamname").html("Team: " + team1);
             $("#teamnameRound").html("Team: " + team1);
+            $("#teamname1End").html("Team: " + team1);
+            $("#teamname2End").html("Team: " + team2);
             $($("#cardholder").children(".ui-block-a")[0]).attr("style", "display: inline;");
-            timerId = setInterval("prueba()", 1000);
         });
-
-        function prueba(){
-            time--;
-            if(time < 0){
-                alert("End");
-                time = 60;
-                window.clearInterval(timerId);
-            }else{
-                $("#timer").html("Time: " + time);
-            }
-        }
     </script>
 </head>
 <body>
     <!-- PAGE Ready -->
     <div id="ready" data-role="page">
         <div data-role="header">
-            <h1>Round <strong>1 / {{ rounds }}</strong></h1>
+            <h1>Round <strong id="round_nro">0 / {{ rounds }}</strong></h1>
         </div>
         <div data-role="content">
             <h1 id="teamname">Team:</h1>
             <h2>Ready?</h2>
-            <a href="#round" data-role="button" data-icon="check" data-iconpos="right" data-theme="e">Go!</a>
+            <a onclick="jsfunction" href="javascript:start_round()" data-role="button" data-icon="check" data-iconpos="right" data-theme="e">Go!</a>
         </div>
     </div>
     <!-- /PAGE Ready -->
@@ -71,81 +60,55 @@
             </div>
             <div class="ui-grid-a" id="cardholder">
                 {% for card in cards %}
-                    <div class="ui-block-a" style="display: none;">
-                        <ul data-role="listview" data-inset="true">
-                        {% for word in card %}
-                            <li>{{ word }}</li>
-                        {% endfor %}
-                        </ul>
-                    </div>
+                <div class="ui-block-a" style="display: none;">
+                    <ul data-role="listview" data-inset="true">
+                    {% for word in card %}
+                        <li>{{ word }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
                 {% endfor %}
                 <div class="ui-block-b">
-                    <div data-role="fieldcontain">
-                        <button data-icon="check">12</button>
-                        <button data-icon="delete">3</button>
+                    <div data-role="fieldcontain" align="center">
+                        <br><br><br>
+                        <a data-icon="check" data-role="content" data-iconpos="" data-theme="b" id="current_score">Score: 0</a>
+                        <br><br><br>
+                    <a onclick="jsfunction" href="javascript:change_card()" data-role="button" data-icon="arrow-r" data-iconpos="" data-theme="e">Next Card...</a>
                     </div>
                 </div>
             </div>
             <fieldset class="ui-grid-a">
                 <div class="ui-block-a"><a onclick="jsfunction" href="javascript:change_card()" data-role="button" data-icon="delete" data-iconpos="" data-theme="a">Incorrect</a></div>
-                <div class="ui-block-b"><a href="#" data-role="button" data-icon="check" data-iconpos="" data-theme="b">Correct</a></div>
+                <div class="ui-block-b"><a onclick="jsfunction" href="javascript:card_correct()" data-role="button" data-icon="check" data-iconpos="" data-theme="b">Correct</a></div>
             </fieldset>
-            <a href="#round-resume" data-role="button">Resume round (delete this)</a>
         </div>
     </div>
     <!-- /PAGE Round -->
 
-    <!-- PAGE Round Resume -->
-    <div data-role="page" id="round-resume">
-        <div data-role="header">
-            <h1>Resumen de ronda</h1>
-        </div>
-        <div data-role="content">
-            <div class="ui-grid-solo">
-                <div class="ui-block-a">
-                    <h1>Equipo X</h1>
-                    <ul>
-                        <li>Correctas 12</li>
-                        <li>Incorrectas 2</li>
-                        <li><strong>Total: 12</strong></li>
-                    </ul>
-                    <a href="#" data-role="button">Continuar</a>
-                    <a href="#ready" data-role="button">Next rounds (delete this)</a>
-                    <a href="#round-end" data-role="button">End round (delete this)</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /PAGE Round Resume -->
-
     <!-- PAGE Rounde end-->
     <div data-role="page" id="round-end">
         <div data-role="header">
-            <h1>Resumen de partida</h1>
+            <h1>End of Game</h1>
         </div>
         <div data-role="content">
-            <h1>Ganador Equipo X</h1>
+            <h1>And the Winner is...</h1>
             <div class="ui-grid-a">
                 <div class="ui-block-a">
-                    <h1>Equipo X1</h1>
+                    <h1 id="teamname1End">Team X1</h1>
                     <ul>
-                        <li>Correctas 12</li>
-                        <li>Incorrectas 2</li>
-                        <li><strong>Total: 12</strong></li>
+                        <li><strong id="team1_total">Total: 0</strong></li>
                     </ul>
                 </div>
                 <div class="ui-block-b">
-                    <h1>Equipo X1</h1>
+                    <h1 id="teamname2End">Team X2</h1>
                     <ul>
-                        <li>Correctas 12</li>
-                        <li>Incorrectas 2</li>
-                        <li><strong>Total: 12</strong></li>
+                        <li><strong id="team2_total">Total: 0</strong></li>
                     </ul>
                 </div>
             </div>
             <fieldset class="ui-grid-a">
-                <div class="ui-block-a"><a href="/setup" data-role="button" data-icon="edit" data-iconpos="" data-theme="a">Juego nuevo</a></div>
-                <div class="ui-block-b"><a href="#ready" data-role="button" data-icon="back" data-iconpos="" data-theme="b">Volver a jugar</a></div>
+                <div class="ui-block-a"><a href="/setup" data-role="button" data-icon="edit" data-iconpos="" data-theme="a">New Game</a></div>
+                <div class="ui-block-b"><a onclick="jsfunction" href="javascript:reset_game()" data-role="button" data-icon="back" data-iconpos="" data-theme="b">Play Again</a></div>
             </fieldset>
         </div>
     </div>
