@@ -44,4 +44,18 @@ Base {
             onClicked: root.howToPlay()
         }
     }
+
+    Label {
+        id: link
+        text: "<a href='http://tabugame.org'>www.tabugame.org</a>"
+        fontSize: "large"
+        color: "#2f3934"
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            bottom: parent.bottom
+            bottomMargin: units.gu(1)
+        }
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        onLinkActivated: Qt.openUrlExternally(link.text)
+    }
 }

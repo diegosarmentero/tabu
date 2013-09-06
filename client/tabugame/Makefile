@@ -18,4 +18,4 @@ check:
 	qmltestrunner -input tests/unit
 
 run:
-	/usr/bin/qmlscene $@ TabuGame.qml
+	/usr/bin/qmlscene $@ tabugame.qml
