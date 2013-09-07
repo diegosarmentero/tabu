@@ -59,6 +59,34 @@ def contact(request):
     return render_response(request, 'contacts.html')
 
 
+def temp_rpc(request):
+    lang = request.GET['lang']
+    mainword = request.GET['mainword']
+    word1 = request.GET['word1']
+    word2 = request.GET['word2']
+    word3 = request.GET['word3']
+    word4 = request.GET['word4']
+    word5 = request.GET['word5']
+    print '\n'
+    print lang
+    print mainword
+    print word1
+    print word2
+    print word3
+    print word4
+    print word5
+    print '\n'
+    user = models.User.objects.get(pk=1)
+    print 'user', user
+    result = models.add_card(lang, mainword, word1, word2, word3, word4,
+        word5, user)
+    print result
+
+    data = simplejson.dumps([])
+
+    return HttpResponse(data, mimetype='application/json')
+
+
 @require_POST
 def rpc(request):
     newlang = request.POST['newlanguage']

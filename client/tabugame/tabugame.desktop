@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=tabugame
-Comment=My project description
+Comment=Incredible fun Party Game! Compete with your friends to find out the secret "word" without saying it and help your team to win!
 Exec=/usr/bin/qmlscene $@ /usr/share/tabugame/tabugame.qml
-Icon=qmlscene
+Icon=tabu_icon.png
 Terminal=false
 Type=Application
 X-Ubuntu-Touch=true

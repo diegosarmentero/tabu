@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 
     # RPC
     url(r'^rpc/', views.rpc, name="rpc"),
+    url(r'^temp_rpc/', views.temp_rpc, name="temp_rpc"),
 
     # Cards
     url(r'^cards/$', views.cards, name='cards'),
