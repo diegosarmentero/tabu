@@ -1,3 +1,9 @@
+$("#form_batch").live("submit", function(event){
+    event.preventDefault();
+    $("#id_newlanguage").val("");
+    $.post("/temp_rpc/", $("#form_batch").serializeArray()).done(card_created);
+});
+
 $("#form_card").live("submit", function(event){
     event.preventDefault();
     $("#id_newlanguage").val("");
