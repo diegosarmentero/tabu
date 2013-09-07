@@ -59,34 +59,6 @@ def contact(request):
     return render_response(request, 'contacts.html')
 
 
-def batch_cards(request):
-    langs = models.get_languages()
-    data = {"langs": langs}
-    return render_response(request, 'batch.html', data)
-
-
-@require_POST
-def temp_rpc(request):
-    lang = request.POST['selCombo']
-    words = request.POST['mainword']
-    for line in words.split('\n'):
-        line = line[1:-2].replace("u'", "").replace("'", "")
-        values = line.split(',')
-        mainword = values[0].strip()
-        word1 = values[1].strip()
-        word2 = values[2].strip()
-        word3 = values[3].strip()
-        word4 = values[4].strip()
-        word5 = values[5].strip()
-        if word2:
-            models.add_card(lang, mainword, word1, word2, word3, word4,
-                word5, request.user)
-
-    data = simplejson.dumps([])
-
-    return HttpResponse(data, mimetype='application/json')
-
-
 @require_POST
 def rpc(request):
     newlang = request.POST['newlanguage']

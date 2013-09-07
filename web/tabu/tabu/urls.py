@@ -12,8 +12,6 @@ urlpatterns = patterns('',
 
     # RPC
     url(r'^rpc/', views.rpc, name="rpc"),
-    url(r'^temp_rpc/', views.temp_rpc, name="temp_rpc"),
-    url(r'^batch/', views.batch_cards, name="batch_cards"),
 
     # Cards
     url(r'^cards/$', views.cards, name='cards'),
