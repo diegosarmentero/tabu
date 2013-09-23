@@ -25,7 +25,12 @@ Base {
     }
 
     Column {
-        anchors.centerIn: parent
+        anchors {
+            top: title.bottom
+            topMargin: units.gu(3)
+            horizontalCenter: parent.horizontalCenter
+        }
+
         spacing: units.gu(3)
 
         Button {

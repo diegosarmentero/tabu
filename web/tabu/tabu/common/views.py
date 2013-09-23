@@ -82,6 +82,7 @@ def rpc(request):
 
 def get_cards(request):
     cards = list(models.get_cards(request.GET['language']))
+    random.shuffle(cards)
     data = simplejson.dumps(cards)
 
     return HttpResponse(data, mimetype='application/json')

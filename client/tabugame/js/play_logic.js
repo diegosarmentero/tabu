@@ -35,6 +35,8 @@ function change_card(){
     }
     var words = root.model[_cardIndex];
     _cardIndex += 1;
+    var words2 = root.model[_cardIndex];
+    _cardIndex += 1;
 
     if(card1.z > card2.z){
         card1.x = -400;
@@ -45,6 +47,12 @@ function change_card(){
         card2.relatedWord3 = words[3];
         card2.relatedWord4 = words[4];
         card2.relatedWord5 = words[5];
+        card1.mainWord = words2[0];
+        card1.relatedWord1 = words2[1];
+        card1.relatedWord2 = words2[2];
+        card1.relatedWord3 = words2[3];
+        card1.relatedWord4 = words2[4];
+        card1.relatedWord5 = words2[5];
     }else{
         card2.x = -400;
         card2.opacity = 0;
@@ -54,13 +62,19 @@ function change_card(){
         card1.relatedWord3 = words[3];
         card1.relatedWord4 = words[4];
         card1.relatedWord5 = words[5];
+        card2.mainWord = words2[0];
+        card2.relatedWord1 = words2[1];
+        card2.relatedWord2 = words2[2];
+        card2.relatedWord3 = words2[3];
+        card2.relatedWord4 = words2[4];
+        card2.relatedWord5 = words2[5];
     }
 }
 
 function shuffle_cards(){
     _cardIndex = 0;
     var cardsDeck = model;
-    root.model = shuffle(cardsDeck);
+    root.model = cardsDeck;
     var words1 = root.model[_cardIndex];
     _cardIndex += 1;
     var words2 = root.model[_cardIndex];
@@ -78,11 +92,6 @@ function shuffle_cards(){
     card2.relatedWord4 = words2[4];
     card2.relatedWord5 = words2[5];
 }
-
-function shuffle(o){
-    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
-};
 
 function next_card(){
     if(_cardIndex >= root.model.length){

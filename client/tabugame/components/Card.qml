@@ -72,7 +72,7 @@ UbuntuShape {
     }
 
     Column {
-        spacing: units.gu(4)
+        spacing: units.gu(3)
         anchors.centerIn: parent
         anchors.margins: units.gu(4)
 

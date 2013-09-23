@@ -234,7 +234,7 @@ Page {
             visible: false
             Label {
                 anchors.centerIn: parent
-                fontSize: "x-large"
+                fontSize: "large"
                 text: "Correct :)"
                 color: "white"
                 z: parent.z + 1
@@ -258,7 +258,7 @@ Page {
             visible: false
             Label {
                 anchors.centerIn: parent
-                fontSize: "x-large"
+                fontSize: "large"
                 text: "Incorrect :("
                 color: "white"
                 z: parent.z + 1

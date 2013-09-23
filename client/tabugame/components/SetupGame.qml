@@ -146,6 +146,11 @@ Base {
                     opacity: .6
                     style: Text.Raised
                     styleColor: "black"
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                    }
                 }
 
                 TextField {
@@ -162,6 +167,11 @@ Base {
                     opacity: .6
                     style: Text.Raised
                     styleColor: "black"
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                    }
                 }
 
                 TextField {
@@ -173,11 +183,17 @@ Base {
 
                 Label {
                     text: i18n.tr("Number of Players per Team:")
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                    }
+
                     fontSize: "large"
                     color: Theme.palette.normal.baseText
                     opacity: .6
                     style: Text.Raised
                     styleColor: "black"
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 }
 
                 TextField {
@@ -195,6 +211,11 @@ Base {
                     opacity: .6
                     style: Text.Raised
                     styleColor: "black"
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                    }
                 }
 
                 TextField {
@@ -212,6 +233,11 @@ Base {
                     opacity: .6
                     style: Text.Raised
                     styleColor: "black"
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                    }
                 }
 
                 Row {
@@ -241,14 +267,17 @@ Base {
                 }
 
                 Row {
-                    spacing: units.gu(2)
-                    anchors.right: parent.right
+                    spacing: units.gu(1)
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                    }
 
                     Button {
                         id: buttonBack
                         text: i18n.tr("Back")
                         color: "#00aec8"
-                        width: units.gu(15)
+                        width: (parent.width / 2) - units.gu(1)
 
                         onClicked: {
                             error_message.visible = false;
@@ -260,7 +289,7 @@ Base {
                         id: button2
                         text: i18n.tr("Play!")
                         color: "#00aec8"
-                        width: units.gu(15)
+                        width: (parent.width / 2) - units.gu(1)
 
                         onClicked: {
                             var team1 = txtTeam1.text;
